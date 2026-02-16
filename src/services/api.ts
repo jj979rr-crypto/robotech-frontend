@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://robotech-tjw0.onrender.com/api',
   // ❌ NO fuerces Content-Type aquí
 });
 
