@@ -277,12 +277,12 @@ export const PublicHome = () => {
               <div className="space-y-4">
                 {loadingTournaments ? (
                   <div className="text-center py-10 text-slate-500 text-sm animate-pulse">Cargando eventos...</div>
-                ) : realTournaments.length === 0 ? (
+                ) : !Array.isArray(realTournaments) || realTournaments.length === 0 ? (
                   <div className="text-center py-10 text-slate-500 bg-slate-900/50 rounded-2xl border border-slate-800 border-dashed">
                     No hay torneos públicos activos en este momento.
                   </div>
                 ) : (
-                  realTournaments?.map((t) => {
+                  realTournaments.map((t) => {
                     // Lógica para estado visual
                     const isOpen = new Date(t.fechaInicio) > new Date();
                     const yaEmpezo = new Date(t.fechaInicio) <= new Date() || t.estado === 'IN_PROGRESS' || t.estado === 'FINISHED';
