@@ -282,7 +282,7 @@ export const PublicHome = () => {
                     No hay torneos públicos activos en este momento.
                   </div>
                 ) : (
-                  realTournaments.map((t) => {
+                  realTournaments?.map((t) => {
                     // Lógica para estado visual
                     const isOpen = new Date(t.fechaInicio) > new Date();
                     const yaEmpezo = new Date(t.fechaInicio) <= new Date() || t.estado === 'IN_PROGRESS' || t.estado === 'FINISHED';
